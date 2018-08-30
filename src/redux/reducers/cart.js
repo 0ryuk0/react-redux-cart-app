@@ -90,7 +90,7 @@ const countCartTotal = (cart) => {
                                         (cartItem.quantity? cartItem.quantity : 1) :
                                         0;
         totalSummary.cartTotal += (cartItem.quantity * (cartItem.updatedPrice? cartItem.updatedPrice :cartItem.price)) - totalSummary.typeDiscount;                                        
-        totalSummary.totalDiscount = totalSummary.totalRawPrice - totalSummary.cartTotal - totalSummary.typeDiscount;
+        totalSummary.totalDiscount = (totalSummary.totalRawPrice - totalSummary.cartTotal - totalSummary.typeDiscount).toFixed(2);
     });
 
     return totalSummary;
